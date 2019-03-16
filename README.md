@@ -13,10 +13,12 @@ That was the basis for my first attempt [ESP8266_WiFi_Speaker](https://github.co
        * ESP8266 ESP-12E Development Board NodeMcu
        * 2x 4ohm 3W Loudspeaker
        * Mini 3W+3W DC 5V Audio Amplifier PAM8043
-       * I2S PCM5102 DAC Decoder ( [ESP8266Audio by Earle F. Philhower, III](https://github.com/earlephilhower/ESP8266Audio) does allow for no decoder, but I have not tried it. )
+       * I2S PCM5102 DAC Decoder ( [ESP8266Audio by Earle F. Philhower, III](https://github.com/earlephilhower/ESP8266Audio)
+                                    does allow for no decoder, but I have not tried it. )
        * 0.96" I2C IIC Serial 128X64 White OLED LCD LED 
 
-       First major component problem was figuring out the DAC connections to use with AudioOutputI2S in the [ESP8266Audio](https://github.com/earlephilhower/ESP8266Audio) library.  
+       First major component problem was figuring out the DAC connections
+       to use with AudioOutputI2S in the [ESP8266Audio](https://github.com/earlephilhower/ESP8266Audio) library.  
        The configuration I finnally manages to get to work was:  
           > 3.3V from ESP8266 -> VCC, 33V, XMT  
           > GND from ESP8266 -> GND, FLT, DMP, FMT, SCL  
@@ -24,7 +26,9 @@ That was the basis for my first attempt [ESP8266_WiFi_Speaker](https://github.co
           > GPIO3 (RX,RXD0) from ESP8266 -> DIN  
           > GPIO2 (D4, TXD1) from ESP8266 -> LCK  
    
-        The 5V Audio Amplifier PAM8043 needs a lot of juice and I found that as mine has a potentiometer I needed to turn it fully down to be able to program or run the ESP when only connected by USB serial connection. Powering from a USB power adapter for normal use, I had no problems.
+        The 5V Audio Amplifier PAM8043 needs a lot of juice and I found that as mine has a potentiometer I needed
+        to turn it fully down to be able to program or run the ESP when only connected by USB serial connection.
+        Powering from a USB power adapter for normal use, I had no problems.
 
    ### ESP32  
         * Heltec WiFi Kit ESP32 with an onboard 128x64 OLED display

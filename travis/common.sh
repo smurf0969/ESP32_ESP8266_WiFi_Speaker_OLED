@@ -191,7 +191,7 @@ function build_sketches_with_arduino()
 set -e
 
 if [ "$BUILD_TYPE" = "build_esp8266" ]; then
-    export BUILD_PY="hardware/esp8266com/esp8266/tools/build.py -b nodemcuv2 -s 4m1m -n hb6f -f 160 -v -k "
+    export BUILD_PY="hardware/esp8266com/esp8266/tools/build.py -b nodemcuv2 -s 4M1M -n hb6f -f 160 -m dio -w none --flash_freq 80 -v -k "
     install_arduino
     build_sketches_with_arduino
 elif [ "$BUILD_TYPE" = "build_esp32" ]; then

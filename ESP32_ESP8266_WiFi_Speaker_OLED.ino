@@ -1,12 +1,4 @@
 #include <FS.h> //this needs to be first, or it all crashes and burns...
-#ifdef ESP8266
-   #ifndef FS_H
-      #define FS_H
-   #endif
-   #ifndef __SD_H__
-      #define __SD_H__
-   #endif
-#endif
 #include "WiFiConnectOLED.h" //include before SSD1306.h if using custom fonts
 
 #include "play.h"

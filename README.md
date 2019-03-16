@@ -45,7 +45,7 @@ Please check/review instructions and screenshots in the [Wiki](https://github.co
  * With newer libraries installed compared to the previous project I have been unable to get a stable connection using the ESP12E unless I set the IwIP Variant to IPv6 Higher Bandwidth.
  * Powering off of a com port can cause issues unless the amplifier is turned right down or off for uploading and playing music at higher volumes.
  * **As I can't seem to get the project to compile in Travis CI for ESP8266 NodeMCU board,** 
-   **I have added precomiled binaries to the initial [release](cde4a4aa29aaf01fbf0c7bdacc3d2a9c2c896d76) and hope to post instructions in the WiKi soon.**
+   **I have added precomiled binaries to the initial [release](https://github.com/smurf0969/ESP32_ESP8266_WiFi_Speaker_OLED/commit/cde4a4aa29aaf01fbf0c7bdacc3d2a9c2c896d76) and hope to post instructions in the WiKi soon.**
 
 ## Putting it all together
 Due to the possibility of frequent IP changes of my Raspberry Pi server I have used [WiFiConnect](https://github.com/smurf0969/WiFiConnect) and its custom paramters.

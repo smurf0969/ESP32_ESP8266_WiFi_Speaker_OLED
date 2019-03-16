@@ -27,10 +27,10 @@ matrix:
 
   include:
 
-    - env:
+#    - env:
 
-      - BUILD_TYPE=build_esp8266
-      - BUILDDOXYGEN=false
+#      - BUILD_TYPE=build_esp8266
+#      - BUILDDOXYGEN=false
 
     - env:
 

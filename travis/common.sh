@@ -82,14 +82,16 @@ function install_libraries()
     mkdir -p $HOME/Arduino/libraries
     #Copy to sketch or library folder
     cp -a $TRAVIS_BUILD_DIR $HOME/Arduino/
-    #git clone https://github.com/greiman/SdFat $HOME/Arduino/libraries/SdFat
+    git clone https://github.com/greiman/SdFat $HOME/Arduino/libraries/SdFat
+    git clone https://github.com/greiman/SdFs $HOME/Arduino/libraries/SdFs
     git clone https://github.com/earlephilhower/ESP8266Audio $HOME/Arduino/libraries/ESP8266Audio
     git clone https://github.com/Gianbacchio/ESP8266_Spiram $HOME/Arduino/libraries/ESP8266_Spiram
     git clone https://github.com/smurf0969/WiFiConnect $HOME/Arduino/libraries/WiFiConnect
     git clone https://github.com/bblanchon/ArduinoJson $HOME/Arduino/libraries/ArduinoJson
     git clone --branch=Allow-overriding-default-font https://github.com/smurf0969/esp8266-oled-ssd1306 $HOME/Arduino/libraries/esp8266-oled-ssd1306
      # Following libs are not to be tested, just used.
-    #rm -rf $HOME/Arduino/libraries/SdFat/examples
+    rm -rf $HOME/Arduino/libraries/SdFat/examples
+    rm -rf $HOME/Arduino/libraries/SdFs/examples
     rm -rf $HOME/Arduino/libraries/ESP8266Audio/examples
     rm -rf $HOME/Arduino/libraries/ESP8266_Spiram/examples
     rm -rf $HOME/Arduino/libraries/WiFiConnect/examples
@@ -186,7 +188,7 @@ function build_sketches_with_arduino()
 set -e
 
 if [ "$BUILD_TYPE" = "build_esp8266" ]; then
-    export BUILD_PY="hardware/esp8266com/esp8266/tools/build.py -b generic -s 4M1M -v -k "
+    export BUILD_PY="hardware/esp8266com/esp8266/tools/build.py -b nodemcuv2 -s 4M1M -v -k "
     install_arduino
     build_sketches_with_arduino
 elif [ "$BUILD_TYPE" = "build_esp32" ]; then

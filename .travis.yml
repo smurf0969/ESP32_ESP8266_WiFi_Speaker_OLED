@@ -29,6 +29,7 @@ matrix:
     - env:
       - BUILD_TYPE=build_esp8266
       - BUILDDOXYGEN=false
+      
    - env:
       - BUILD_TYPE=build_esp32
       - BUILDDOXYGEN=false

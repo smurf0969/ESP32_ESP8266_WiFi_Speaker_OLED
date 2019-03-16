@@ -1,3 +1,4 @@
+#define FS_NO_GLOBALS
 #include <FS.h> //this needs to be first, or it all crashes and burns...
 #include "WiFiConnectOLED.h" //include before SSD1306.h if using custom fonts
 

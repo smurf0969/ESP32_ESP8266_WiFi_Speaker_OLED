@@ -2,6 +2,7 @@ branches:
     only:
       - master
       - /^v?\d+\.\d+(\.\d+)?(-\S*)?$/
+      - fix_travis_esp8266_build
       
 os: linux
 dist: trusty

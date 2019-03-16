@@ -1,0 +1,12 @@
+
+.vscode/arduino.json
+.vscode/c_cpp_properties.json
+Doxyfile*
+doxygen_sqlite3.db
+html
+images
+wiring
+data
+bin
+ESP32_ESP8266_WiFi_Speaker_OLED.md
+

@@ -1,7 +1,7 @@
 branches:
     only:
       - master
-      - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+      - /^v?\d+\.\d+(\.\d+)?(-\S*)?$/
       
 os: linux
 dist: trusty
@@ -27,10 +27,12 @@ matrix:
   include:
 
     - env:
+
       - BUILD_TYPE=build_esp8266
       - BUILDDOXYGEN=false
-      
-   - env:
+
+    - env:
+
       - BUILD_TYPE=build_esp32
       - BUILDDOXYGEN=false
 
@@ -45,7 +47,8 @@ script:
 
 # Generate and deploy documentation
 after_success:
- 
+  # - source <(curl -SLs  https://raw.githubusercontent.com/smurf0969/travis-ci-arduino/master/library_check.sh)
+  # - source <(curl -SLs  https://raw.githubusercontent.com/smurf0969/.github/master/doxygen/doxy_gen_and_deploy.sh)
 
 notifications:
   email:

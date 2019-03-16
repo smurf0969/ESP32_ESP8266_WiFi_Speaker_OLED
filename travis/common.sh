@@ -84,6 +84,7 @@ function install_libraries()
     cp -a $TRAVIS_BUILD_DIR $HOME/Arduino/
    # git clone https://github.com/greiman/SdFat $HOME/Arduino/libraries/SdFat
    # git clone https://github.com/greiman/SdFs $HOME/Arduino/libraries/SdFs
+   git clone https://github.com/earlephilhower/ESP8266SdFat $HOME/Arduino/libraries/ESP8266SdFat
     git clone https://github.com/earlephilhower/ESP8266Audio $HOME/Arduino/libraries/ESP8266Audio
     git clone https://github.com/Gianbacchio/ESP8266_Spiram $HOME/Arduino/libraries/ESP8266_Spiram
     git clone https://github.com/smurf0969/WiFiConnect $HOME/Arduino/libraries/WiFiConnect
@@ -92,6 +93,7 @@ function install_libraries()
      # Following libs are not to be tested, just used.
     #rm -rf $HOME/Arduino/libraries/SdFat/examples
     #rm -rf $HOME/Arduino/libraries/SdFs/examples
+    rm -rf HOME/Arduino/libraries/ESP8266SdFat/examples
     rm -rf $HOME/Arduino/libraries/ESP8266Audio/examples
     rm -rf $HOME/Arduino/libraries/ESP8266_Spiram/examples
     rm -rf $HOME/Arduino/libraries/WiFiConnect/examples
@@ -141,9 +143,9 @@ function install_ide()
     mkdir esp8266com
     cd esp8266com
     git clone https://github.com/esp8266/Arduino.git esp8266
-    cd esp8266
-    git submodule update --init
-    cd ..
+    # cd esp8266
+    # git submodule update --init
+    # cd ..
     pushd esp8266/tools
     python get.py
     export PATH="$ide_path:$ide_path/hardware/esp8266com/esp8266/tools/xtensa-lx106-elf/bin:$PATH"

@@ -129,7 +129,7 @@ void saveConfiguration() {
   doc["server_port"] = server_port;
   doc["server_path"] = server_path;
 
-  File configFile = SPIFFS.open("/config.json", "w");
+  fs::File configFile = SPIFFS.open("/config.json", "w");
 
   if (!configFile) {
     Serial.println("failed to open config file for writing");
@@ -190,7 +190,7 @@ void loadConfiguration() {
       //file exists, reading and loading
       Serial.println("reading config file");
 
-      File configFile = SPIFFS.open("/config.json", "r");
+      fs::File configFile = SPIFFS.open("/config.json", "r");
       if (configFile) {
         Serial.println(F("opened config file"));
         size_t sizec = configFile.size();

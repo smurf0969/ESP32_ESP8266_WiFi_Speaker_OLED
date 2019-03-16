@@ -140,7 +140,10 @@ function install_ide()
     rm -rf esp8266com
     mkdir esp8266com
     cd esp8266com
-    git clone https://github.com/esp8266/Arduino esp8266
+    git clone https://github.com/esp8266/Arduino.git esp8266
+    cd esp8266
+    git submodule update --init
+    cd ..
     pushd esp8266/tools
     python get.py
     export PATH="$ide_path:$ide_path/hardware/esp8266com/esp8266/tools/xtensa-lx106-elf/bin:$PATH"

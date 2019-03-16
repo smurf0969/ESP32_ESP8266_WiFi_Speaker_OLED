@@ -1,0 +1,52 @@
+branches:
+    only:
+      - master
+      - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+      
+os: linux
+dist: trusty
+language: bash
+sudo: false
+cache:
+  directories:
+    - ~/arduino_ide
+  #  - ~/.arduino15/packages/
+before_cache:
+    - rm -rf ~/arduino_ide/hardware/esp8266com
+    - rm -rf  ~/arduino_ide/hardware/espressif
+git:
+  depth: false
+  quiet: true
+env:
+  global:
+     - PRETTYNAME="ESP32 and ESP8266 WiFi Speaker with OLED Display"
+     - ARDUINO_IDE_VERSION="1.8.8"
+
+matrix:
+
+  include:
+
+    - env:
+      - BUILD_TYPE=build_esp8266
+      - BUILDDOXYGEN=false
+   - env:
+      - BUILD_TYPE=build_esp32
+      - BUILDDOXYGEN=false
+
+before_install:
+
+
+install:
+
+
+script:
+   - $TRAVIS_BUILD_DIR/travis/common.sh
+
+# Generate and deploy documentation
+after_success:
+ 
+
+notifications:
+  email:
+    on_success: change # default: change
+    on_failure: always # default: always

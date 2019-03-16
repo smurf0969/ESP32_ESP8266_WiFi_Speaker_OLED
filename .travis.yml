@@ -21,7 +21,7 @@ git:
 env:
   global:
      - PRETTYNAME="ESP32 and ESP8266 WiFi Speaker with OLED Display"
-     - ARDUINO_IDE_VERSION="1.8.9"
+     - ARDUINO_IDE_VERSION="1.8.8"
 
 matrix:
 

@@ -1,4 +1,4 @@
-# ESP32 & ESP8266 WiFi Speaker with OLED display
+# ESP32 & ESP8266 WiFi Speaker with OLED display [![Latest Release](https://img.shields.io/github/release/smurf0969/ESP32_ESP8266_WiFi_Speaker_OLED.svg)](https://github.com/smurf0969/ESP32_ESP8266_WiFi_Speaker_OLED/releases/latest)
 A MP3 streaming WiFi speaker for ESP8266 & ESP32 chips
 
 ## Overview
